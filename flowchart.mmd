@@ -1,0 +1,18 @@
+flowchart TD
+ A[Start] --> B[Upload CSV/Excel or load sample CSV]
+ B --> C{Name, RollNo and at least one subject?}
+ C -- No --> D[Show validation error]
+ D --> B
+ C -- Yes --> E[Validate marks 0-100]
+ E --> F[Calculate subject average]
+ F --> G{Assignment supplied?}
+ G -- Yes --> H[Overall average = mean(subject average, assignment)]
+ G -- No --> I[Overall average = subject average]
+ H --> J[Assign performance category]
+ I --> J
+ J --> K{Attendance supplied and below threshold OR average below support threshold?}
+ K --> L[Flag for human review]
+ K --> M[No support flag]
+ L --> N[Show dashboard and export reports]
+ M --> N
+ N --> O[End]
