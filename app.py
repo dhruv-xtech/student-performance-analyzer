@@ -20,7 +20,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 with st.sidebar:
-    st.title("📊 SPA")
+    st.title("EduMetrics")
     st.caption("Engineering Student Performance Analyzer")
     st.divider()
     upload = st.file_uploader("Upload student data", type=["csv", "xlsx"])
